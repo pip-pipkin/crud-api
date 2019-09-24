@@ -11,6 +11,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
+    "lint": "eslint src",
+    "pipeline": "npm i && npm run lint && npm run build && npm run start"
+
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +25,8 @@
     "express": "^4.17.1",
     "morgan": "^1.9.1",
     "pg": "^7.12.1",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",

@@ -1,8 +1,10 @@
 import 'dotenv/config'
-import express from 'express'
-import config from './config/config'
 import cors from 'cors'
-import router from './routes';
+import express from 'express'
+import morgan from 'morgan'
+import config from './config/config'
+import router from './routes'
+import logger from './logger'
 
 const startServer = async () => {
   const app = express();
@@ -13,6 +15,8 @@ const startServer = async () => {
   app.use(express.json())
 
   app.enable('trust proxy');
+
+  app.use(morgan('tiny'))
 
   // Health Checks
   app.get('/status', (req, res) => {
@@ -45,12 +49,12 @@ const startServer = async () => {
 
   app.listen(config.port, err => {
     if (err) {
-      console.log(err);
+      logger.error(err);
       process.exit(1)
       return
     }
 
-    console.info(`
+    logger.info(`
     ################################################
     🛡️  Server listening on port: ${config.port} 🛡️ 
     ################################################
