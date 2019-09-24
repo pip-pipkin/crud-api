@@ -8,9 +8,12 @@
     "start:dev": "nodemon --exec babel-node src/index.js",
     "build:clean": " rm -rf dist && mkdir dist",
     "build": "npm run build:clean && babel src --out-dir dist",
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
     "lint": "eslint src",
-    "test": "jest",
     "pipeline": "npm i && npm run lint && npm run build && npm run start"
+
   },
   "author": "",
   "license": "ISC",
