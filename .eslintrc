@@ -12,5 +12,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:sonarjs/recommended", 
-    "plugin:jest/recommended"]
+    "plugin:jest/recommended"
+  ]
 }
