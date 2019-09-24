@@ -13,7 +13,6 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint src",
     "pipeline": "npm i && npm run lint && npm run build && npm run start"
-
   },
   "author": "",
   "license": "ISC",

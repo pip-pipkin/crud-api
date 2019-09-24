@@ -5,7 +5,6 @@ import morgan from 'morgan'
 import config from './config/config'
 import swaggerSpec from './config/jsdocConfig'
 import swaggerUi from 'swagger-ui-express'
-import cors from 'cors'
 import router from './routes'
 import logger from './logger'
 
