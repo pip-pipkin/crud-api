@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import express from 'express'
 import config from './config/config'
+import swaggerSpec from './config/jsdocConfig'
+import swaggerUi from 'swagger-ui-express'
 import cors from 'cors'
 import router from './routes';
 
@@ -23,7 +25,7 @@ const startServer = async () => {
     res.status(200).end()
   })
 
-
+  app.use('/api-docs', (req, res, next) => {console.log('Please God work!'); next()}, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.use('/api', router)
 
   /// catch 404 and forward to error handler
