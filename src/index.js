@@ -29,7 +29,7 @@ const startServer = async () => {
     res.status(200).end()
   })
 
-  app.use('/api-docs', (req, res, next) => {console.log('Please God work!'); next()}, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.use('/api', router)
 
   /// catch 404 and forward to error handler
