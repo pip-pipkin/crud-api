@@ -9,7 +9,7 @@ const options = {
     },
   },
   // Path to the API docs
-  apis: ['./src/**/**.routes.js'],
+  apis: ['./**/**.routes.js'],
 };
 
 // Initialize swagger-jsdoc -> returns validated swagger spec in json format
